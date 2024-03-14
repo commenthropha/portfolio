@@ -91,7 +91,7 @@ const About = () => {
               initial={{ opacity: 0, scale: 0.5, y: 100 }}
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              viewport={{ once: true, amount: "all" }} 
+              viewport={{ once: true, amount: "some" }} 
             >
               <Tilt options={defaultOptions}>
                 <TechCard
