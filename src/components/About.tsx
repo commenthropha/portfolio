@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import TechCard from "./TechCard";
 import {
   JavaLogo,
@@ -44,14 +45,20 @@ const About = () => {
       className= "max-w-[100rem] mx-auto py-16 p-5 sm:p-10 md:p-20"
     >
       <div className="max-w-[100rem] mx-auto">
-        <h6 className="font-mono text-lg md:text-xl my-4 text-[#fcba03]">
-          ABOUT ME
-        </h6>
-        <div
-          className="text-4xl lg:text-5xl font-sans font-bold mt-4 mb-0 md:mt-6 lg:mt-8"
+        <motion.div        
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
         >
-          <h1>Who am I?</h1>
-        </div>
+          <h6 className="font-mono text-lg md:text-xl my-4 text-[#fcba03]">
+            ABOUT ME
+          </h6>
+          <div
+            className="text-4xl lg:text-5xl font-sans font-bold mt-4 mb-0 md:mt-6 lg:mt-8"
+          >
+            <h1>Who am I?</h1>
+          </div>
+        </motion.div>
         <p
           id="text"
           className="my-6 mb-12 md:my-8 lg:my-10 2xl:my-16 text-md md:text-lg xl:text-xl font-sans mx-2 md:mx-4 lg:mx-6 text-violet-100"

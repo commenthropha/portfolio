@@ -2,7 +2,7 @@ import { CardData } from "../public";
 
 const TechCard = ({ title, image, background, text }: CardData) => {
     return (
-      <div className="m-1 md:m-3">
+      <div className="fade-in-bottom m-1 md:m-3">
         <div
           id="content"
           className={`${background} ${text} rounded-xl flex flex-col justify-center items-center p-2 sm:p-4`}
