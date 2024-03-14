@@ -52,7 +52,7 @@ const Hero = () => {
     <div className="max-w-[100rem] mx-auto flex flex-col lg:flex-row">
       <div className="lg:w-1/2 xl:w-2/5 flex items-center justify-center">
         <div className="my-16 md:my-24 mx-10 lg:mx-24">
-          <h1 className="slit-in-vertical text-center md:text-right text-5xl md:text-7xl xl:text-8xl font-sans font-bold">
+          <h1 className="text-center md:text-right text-5xl md:text-7xl xl:text-8xl font-sans font-bold">
             Hey, my name is{" "}
             <span className="underline font-bold text-[#fcba03]">Anees</span>
           </h1>
