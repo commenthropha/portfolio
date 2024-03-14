@@ -46,7 +46,7 @@ const About = () => {
     >
       <div className="max-w-[100rem] mx-auto">
         <motion.div
-          initial={{ opacity: 0, scale: 0.79}} 
+          initial={{ opacity: 0, scale: 0.75}} 
           transition={{ duration: 1 }} 
           whileInView={{ opacity: 1, scale: 1 }} 
           viewport={{ once: true, amount: "all" }} 
@@ -70,7 +70,7 @@ const About = () => {
                     </p>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, scale: 0.79}} 
+            initial={{ opacity: 0, scale: 0.75}} 
             transition={{ duration: 1 }} 
             whileInView={{ opacity: 1, scale: 1 }} 
             viewport={{ once: true, amount: "all" }} 
@@ -88,9 +88,9 @@ const About = () => {
         {data.map((cardData: CardData, index: number) => (
             <motion.div
               key={cardData.title}
-              initial={{ opacity: 0, scale: 0.5, y: 100 }}
+              initial={{ opacity: 0, scale: 0.75, y: 100 }}
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ delay: index * 0.25 }}
+              transition={{ delay: index * 0.2, duration: 1 }}
               viewport={{ once: true, amount: "some" }} 
             >
               <Tilt options={defaultOptions}>
