@@ -45,48 +45,63 @@ const About = () => {
       className= "max-w-[100rem] mx-auto py-16 p-5 sm:p-10 md:p-20"
     >
       <div className="max-w-[100rem] mx-auto">
-        <motion.div        
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.79}} 
+          transition={{ duration: 0.5 }} 
+          whileInView={{ opacity: 1, scale: 1 }} 
+          viewport={{ once: true, amount: "all" }} 
         >
-          <h6 className="font-mono text-lg md:text-xl my-4 text-[#fcba03]">
-            ABOUT ME
+            <h6 className="font-mono text-lg md:text-xl my-4 text-[#fcba03]">
+              ABOUT ME
+            </h6>
+            <div
+              className="text-4xl lg:text-5xl font-sans font-bold mt-4 mb-0 md:mt-6 lg:mt-8"
+            >
+              <h1>Who am I?</h1>
+            </div>
+                    <p
+            id="text"
+            className="my-6 mb-12 md:my-8 lg:my-10 2xl:my-16 text-md md:text-lg xl:text-xl font-sans mx-2 md:mx-4 lg:mx-6 text-violet-100"
+                    >
+            I am a second year Computer Science student at the <span className="font-mono text-[#fcba03]"> University of Warwick </span> currently
+            due to graduate in Summer 2026. I have a strong background in software development, having worked with a wealth of
+            programming languages across a range of paradigms. Notwithstanding, I specialise in front-end web development, with
+            extensive experience leading a team for a university project and developing my skills through personal projects on GitHub.
+                    </p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.79}} 
+            transition={{ duration: 0.5 }} 
+            whileInView={{ opacity: 1, scale: 1 }} 
+            viewport={{ once: true, amount: "all" }} 
+          >
+          <h6 className="text-right font-mono text-lg md:text-xl mt-36 text-[#fcba03]">
+            LANGUAGES & TECHNOLOGIES
           </h6>
           <div
             className="text-4xl lg:text-5xl font-sans font-bold mt-4 mb-0 md:mt-6 lg:mt-8"
           >
-            <h1>Who am I?</h1>
+            <h1 className="text-right mb-8">I have experience with...</h1>
           </div>
         </motion.div>
-        <p
-          id="text"
-          className="my-6 mb-12 md:my-8 lg:my-10 2xl:my-16 text-md md:text-lg xl:text-xl font-sans mx-2 md:mx-4 lg:mx-6 text-violet-100"
-        >
-          I am a second year Computer Science student at the <span className="font-mono text-[#fcba03]"> University of Warwick </span> currently
-          due to graduate in Summer 2026. I have a strong background in software development, having worked with a wealth of
-          programming languages across a range of paradigms. Notwithstanding, I specialise in front-end web development, with
-          extensive experience leading a team for a university project and developing my skills through personal projects on GitHub.
-        </p>
-        <h6 className="text-right font-mono text-lg md:text-xl mt-36 text-[#fcba03]">
-          LANGUAGES & TECHNOLOGIES
-        </h6>
-        <div
-          className="text-4xl lg:text-5xl font-sans font-bold mt-4 mb-0 md:mt-6 lg:mt-8"
-        >
-          <h1 className="text-right mb-8">I have experience with...</h1>
-        </div>
         <div className="grid grid-cols-4 xl:grid-cols-8 gap-1">
-          {data.map((cardData: CardData) => (
-            <Tilt options={defaultOptions}>
-              <TechCard
-                key={cardData.title}
-                title={cardData.title}
-                image={cardData.image}
-                background={cardData.background}
-                text={cardData.text}
-              />
-            </Tilt>
+        {data.map((cardData: CardData, index: number) => (
+            <motion.div
+              key={cardData.title}
+              initial={{ opacity: 0, scale: 0.75, x: -50 }}
+              whileInView={{ opacity: 1, scale: 1, x: 0 }}
+              transition={{ delay: (index + 0.1) * 0.1 }}
+              viewport={{ once: true, amount: "all" }} 
+            >
+              <Tilt options={defaultOptions}>
+                <TechCard
+                  title={cardData.title}
+                  image={cardData.image}
+                  background={cardData.background}
+                  text={cardData.text}
+                />
+              </Tilt>
+            </motion.div>
           ))}
         </div>
       </div>
