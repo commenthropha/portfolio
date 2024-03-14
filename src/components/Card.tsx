@@ -96,7 +96,7 @@ const CardLink = styled(motion.div)<{ opened: boolean }>`
       bottom: 0;
       left: 0;
       margin: auto;
-      z-index: 10;
+      z-index: 20;
       display: flex;
       justify-content: flex-start;
       flex-direction: column;
@@ -107,7 +107,7 @@ const CardBackground = styled(motion.div)`
   height: 100vh;
   width: 100vw;
   position: fixed;
-  z-index: 9;
+  z-index: 15;
   top: 0;
   right: 0;
   left: 0;
