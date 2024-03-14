@@ -26,8 +26,8 @@ code {
 }
 
 .slit-in-vertical {
-	-webkit-animation: slit-in-vertical 2s ease-in-out 0.25s both;
-	        animation: slit-in-vertical 2s ease-in-out 0.25s both;
+	-webkit-animation: slit-in-vertical 1.25s ease-in-out 0.25s both;
+	        animation: slit-in-vertical 1.25s ease-in-out 0.25s both;
 }
 
 @-webkit-keyframes slit-in-vertical {
