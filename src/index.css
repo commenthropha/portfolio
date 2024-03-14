@@ -26,8 +26,8 @@ code {
 }
 
 .slit-in-vertical {
-	-webkit-animation: slit-in-vertical 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) 0.25s both;
-	        animation: slit-in-vertical 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) 0.25s both;
+	-webkit-animation: slit-in-vertical 2s ease-in-out 0.25s both;
+	        animation: slit-in-vertical 2s ease-in-out 0.25s both;
 }
 
 @-webkit-keyframes slit-in-vertical {
