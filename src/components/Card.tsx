@@ -103,11 +103,6 @@ const CardLink = styled(motion.div)<{ opened: boolean }>`
     `}
 `;
 
-const CardImage = styled(motion.img)`
-  width: 100%;
-  height: auto;
-`;
-
 const CardBackground = styled(motion.div)`
   height: 100vh;
   width: 100vw;
@@ -118,12 +113,6 @@ const CardBackground = styled(motion.div)`
   left: 0;
   bottom: 0;
   background: rgba(10, 10, 10, 0.7);
-`;
-
-const AbsoluteCardContainer = styled.div`
-  width: min(50rem, 90vw);
-  padding: 1rem;
-  position: relative;
 `;
 
 export default Card
