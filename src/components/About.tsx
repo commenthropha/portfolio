@@ -47,7 +47,7 @@ const About = () => {
       <div className="max-w-[100rem] mx-auto">
         <motion.div
           initial={{ opacity: 0, scale: 0.79}} 
-          transition={{ duration: 0.5 }} 
+          transition={{ duration: 1 }} 
           whileInView={{ opacity: 1, scale: 1 }} 
           viewport={{ once: true, amount: "all" }} 
         >
@@ -71,7 +71,7 @@ const About = () => {
           </motion.div>
           <motion.div
             initial={{ opacity: 0, scale: 0.79}} 
-            transition={{ duration: 0.5 }} 
+            transition={{ duration: 1 }} 
             whileInView={{ opacity: 1, scale: 1 }} 
             viewport={{ once: true, amount: "all" }} 
           >
@@ -90,7 +90,7 @@ const About = () => {
               key={cardData.title}
               initial={{ opacity: 0, scale: 0.5, y: 100 }}
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
+              transition={{ delay: index * 0.25 }}
               viewport={{ once: true, amount: "some" }} 
             >
               <Tilt options={defaultOptions}>
