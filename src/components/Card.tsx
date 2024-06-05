@@ -121,14 +121,4 @@ const CardBackground = styled(motion.div)`
   background: rgba(10, 10, 10, 0.7);
 `;
 
-const ReturnText = styled.p`
-  cursor: pointer;
-  color: #61DAFB;
-  text-decoration: underline;
-  margin-top: 1rem;
-  &:hover {
-    color: #F2BB30;
-  }
-`;
-
 export default Card
