@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Fragment, useEffect, useRef, useState } from "react";
 import { Project } from "../public";
 import { FaArrowRight } from "react-icons/fa6";
+import { RxCross1 } from "react-icons/rx";
 
 const Card = ({ title, link, description, icons }: Project) => {
   const [isCardOpened, setIsCardOpened] = useState(false);
@@ -23,7 +24,7 @@ const Card = ({ title, link, description, icons }: Project) => {
   return (
     <Fragment>
       <CardLink
-        className={`border-[1px] border-solid border-[#2c0d4a] p-4 xl:p-12 rounded-lg bg-[#08050C] text-[#F2BB30]`} 
+        className={`p-6 xl:p-12 rounded-lg bg-[#000000] text-[#D69400]`} 
         ref={card}
         opened = {isCardOpened}
         layout
@@ -39,6 +40,11 @@ const Card = ({ title, link, description, icons }: Project) => {
           }
         }}
       >
+        {isCardOpened && (
+          <div id="Test" onClick={(e) => { e.stopPropagation(); setIsCardOpened(false); }} className="flex text-xl flex-col items-end mb-5 text-white">
+            <RxCross1/>
+          </div>
+        )}
         <motion.div className="flex mb-1" layout="position">
           {icons.map(([Icon, color]) => (
             <Icon color={color} size={24} className="mr-1"/>
@@ -58,7 +64,7 @@ const Card = ({ title, link, description, icons }: Project) => {
           </div>
         )}
         {!isCardOpened && (
-          <p className="text-white mt-8 text-sm flex items-center">See more about this project<FaArrowRight className="ml-1"/></p>
+          <p className="text-white mt-8 text-sm flex items-center hover:cursor-pointer">See more about this project<FaArrowRight className="ml-1 text-[#785EF0]"/></p>
         )}
       </CardLink>
       {isCardOpened && (
@@ -72,7 +78,6 @@ const Card = ({ title, link, description, icons }: Project) => {
           <CardBackground
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            onClick={() => setIsCardOpened(false)}
           />
         </Fragment>
       )}
@@ -86,6 +91,7 @@ const CardLink = styled(motion.div)<{ opened: boolean }>`
   ${(props) =>
     props.opened &&
     css`
+      border: 1px solid #785EF0; 
       width: min(40rem, 95%);
       height: calc(100% - 10rem);
       overflow-y: auto;
@@ -113,6 +119,16 @@ const CardBackground = styled(motion.div)`
   left: 0;
   bottom: 0;
   background: rgba(10, 10, 10, 0.7);
+`;
+
+const ReturnText = styled.p`
+  cursor: pointer;
+  color: #61DAFB;
+  text-decoration: underline;
+  margin-top: 1rem;
+  &:hover {
+    color: #F2BB30;
+  }
 `;
 
 export default Card

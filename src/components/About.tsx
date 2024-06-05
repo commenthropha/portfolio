@@ -51,7 +51,7 @@ const About = () => {
           whileInView={{ opacity: 1, scale: 1 }} 
           viewport={{ once: true, amount: "all" }} 
         >
-            <h6 className="font-mono text-lg md:text-xl my-4 text-[#fcba03]">
+            <h6 className="font-mono text-lg md:text-xl my-4 text-[#785EF0]">
               ABOUT ME
             </h6>
             <div
@@ -63,11 +63,9 @@ const About = () => {
             id="text"
             className="my-6 mb-12 md:my-8 lg:my-10 2xl:my-16 text-md md:text-lg xl:text-xl font-sans mx-2 md:mx-4 lg:mx-6 text-violet-100"
                     >
-            I am a second year Computer Science student at the <span className="font-mono text-[#fcba03]"> University of Warwick </span> currently
-            due to graduate in Summer 2026. I have a strong background in software development, having worked with a wealth of
-            programming languages across a range of paradigms. Notwithstanding, I specialise in front-end web development, with
-            extensive experience leading a team for a university project and developing my skills through personal projects on GitHub.
-                    </p>
+            I am a Computer Science student at the <span className="font-mono text-[#D69400]">University of Warwick</span>, currently on an intercalated year working as a Java Software Engineer at <span className="font-mono text-[#D69400]">Siemens</span> 
+            . I have a strong background in software development, having worked with a wealth of programming languages across a range of paradigms. I maintain an ongoing personal interest in front-end web development, with extensive experience leading a team 
+            for a university project and developing my skills through personal projects on GitHub. Additionally, I have a keen interest in retro hardware design and game development.                    </p>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, scale: 0.75}} 
@@ -75,7 +73,7 @@ const About = () => {
             whileInView={{ opacity: 1, scale: 1 }} 
             viewport={{ once: true, amount: "all" }} 
           >
-          <h6 className="text-right font-mono text-lg md:text-xl mt-36 text-[#fcba03]">
+          <h6 className="text-right font-mono text-lg md:text-xl mt-36 text-[#785EF0]">
             LANGUAGES & TECHNOLOGIES
           </h6>
           <div

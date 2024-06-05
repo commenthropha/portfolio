@@ -40,8 +40,8 @@ const ResponsiveCanvas = () => {
         minPolarAngle={1.2}
         maxPolarAngle={1.2}
       />
-      <ambientLight intensity={3} />
-      <pointLight position={[0, 1, 1]} color="#fcba03" />
+      <ambientLight intensity={2} />
+      <pointLight position={[0, 1, 1]} color="#D69400" />
       <Computer />
     </Canvas>
   );
@@ -54,7 +54,7 @@ const Hero = () => {
         <div className="my-16 md:my-24 mx-10 lg:mx-24">
           <h1 className="text-center md:text-right text-5xl md:text-7xl xl:text-8xl font-sans font-bold">
             Hey, my name is{" "}
-            <span className="underline font-bold text-[#fcba03]">Anees</span>
+            <span className="underline font-bold text-[#D69400]">Anees</span>
           </h1>
         </div>
       </div>
