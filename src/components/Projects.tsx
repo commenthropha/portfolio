@@ -31,7 +31,7 @@ const Projects = () => {
           whileInView={{ opacity: 1, scale: 1 }} 
           viewport={{ once: true, amount: "all" }} 
         >
-          <h6 className="font-mono text-lg md:text-xl my-4 text-[#785EF0]">
+          <h6 className="font-mono text-lg md:text-xl my-4 text-[#322763]">
             PROJECTS
           </h6>
           <div

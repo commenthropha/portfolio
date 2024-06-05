@@ -91,7 +91,7 @@ const CardLink = styled(motion.div)<{ opened: boolean }>`
   ${(props) =>
     props.opened &&
     css`
-      border: 1px solid #785EF0; 
+      border: 1px solid #322763; 
       width: min(40rem, 95%);
       height: calc(100% - 10rem);
       overflow-y: auto;
