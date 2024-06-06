@@ -24,7 +24,7 @@ const Card = ({ title, link, description, icons }: Project) => {
   return (
     <Fragment>
       <CardLink
-        className={`p-6 xl:p-12 rounded-lg bg-[#000000] text-[#D69400]`} 
+        className={`p-6 xl:p-12 rounded-lg bg-[#000000] text-[#D69400] ${!isCardOpened ? 'hover:cursor-pointer' : ''}`}
         ref={card}
         opened = {isCardOpened}
         layout
@@ -42,7 +42,7 @@ const Card = ({ title, link, description, icons }: Project) => {
       >
         {isCardOpened && (
           <div id="Test" onClick={(e) => { e.stopPropagation(); setIsCardOpened(false); }} className="flex text-xl flex-col items-end mb-5 text-white">
-            <RxCross1/>
+            <RxCross1 className="hover:cursor-pointer"/>
           </div>
         )}
         <motion.div className="flex mb-1" layout="position">
@@ -64,7 +64,7 @@ const Card = ({ title, link, description, icons }: Project) => {
           </div>
         )}
         {!isCardOpened && (
-          <p className="text-white mt-8 text-sm flex items-center hover:cursor-pointer">See more about this project<FaArrowRight className="ml-1 text-[#785EF0]"/></p>
+          <p className="text-white mt-8 text-sm flex items-center">See more about this project<FaArrowRight className="ml-1 text-[#785EF0]"/></p>
         )}
       </CardLink>
       {isCardOpened && (
