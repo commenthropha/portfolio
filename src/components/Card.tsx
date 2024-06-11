@@ -24,7 +24,7 @@ const Card = ({ title, link, description, icons }: Project) => {
   return (
     <Fragment>
       <CardLink
-        className={`p-6 xl:p-12 rounded-lg bg-[#000000] text-[#D69400] ${!isCardOpened ? 'hover:cursor-pointer' : ''}`}
+        className={`p-6 xl:p-12 sm:rounded-lg bg-[#000000] text-[#D69400] ${!isCardOpened ? 'hover:cursor-pointer' : ''}`}
         ref={card}
         opened = {isCardOpened}
         layout
@@ -107,7 +107,7 @@ const CardLink = styled(motion.div)<{ opened: boolean }>`
       justify-content: flex-start;
       flex-direction: column;
 
-      @media (max-width: 450px) {
+      @media (max-width: 640px) {
         width: 100%;
         height: 100%;
         border: none;
