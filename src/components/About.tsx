@@ -42,9 +42,9 @@ const About = () => {
   return (
     <div
       id="about"
-      className= "max-w-[100rem] mx-auto py-16 p-5 sm:p-10 md:p-20"
+      className= "max-w-[60rem] mx-auto py-16 p-5 sm:p-10 lg:-translate-y-24"
     >
-      <div className="max-w-[100rem] mx-auto">
+      <div className="max-w-[60rem] mx-auto">
         <motion.div
           initial={{ opacity: 0, scale: 0.75}} 
           transition={{ duration: 0.5, easeOut: true }} 
@@ -55,13 +55,13 @@ const About = () => {
               ABOUT ME
             </h6>
             <div
-              className="text-4xl lg:text-5xl font-sans font-bold mt-4 mb-0 md:mt-6 lg:mt-8"
+              className="text-4xl font-sans font-bold mt-4 mb-0"
             >
               <h1>Who am I?</h1>
             </div>
                     <p
             id="text"
-            className="my-6 mb-12 md:my-8 lg:my-10 2xl:my-16 text-md md:text-lg xl:text-xl font-sans mx-2 md:mx-4 lg:mx-6 text-violet-100"
+            className="my-6 mb-12 md:my-8 lg:my-10 2xl:my-16 text-md lg:text-lg font-sans mx-2 md:mx-4 lg:mx-6 text-violet-100"
                     >
             I am a Computer Science student at the <span className="font-mono text-[#D69400]">University of Warwick</span>, currently on an intercalated year working as a Java Software Engineer at <span className="font-mono text-[#D69400]">Siemens</span> 
             . I have a strong background in software development, having worked with a wealth of programming languages across a range of paradigms. I maintain an ongoing personal interest in front-end web development, with extensive experience leading a team 
@@ -73,16 +73,16 @@ const About = () => {
             whileInView={{ opacity: 1, scale: 1 }} 
             viewport={{ once: true, amount: "all" }} 
           >
-          <h6 className="text-right font-mono text-lg md:text-xl mt-36 text-[#785EF0]">
+          <h6 className="text-right font-mono text-lg md:text-xl mt-24 text-[#785EF0]">
             LANGUAGES & TECHNOLOGIES
           </h6>
           <div
-            className="text-4xl lg:text-5xl font-sans font-bold mt-4 mb-0 md:mt-6 lg:mt-8"
+            className="text-4xl font-sans font-bold mt-4 mb-0"
           >
             <h1 className="text-right mb-8">I have experience with...</h1>
           </div>
         </motion.div>
-        <div className="grid grid-cols-4 xl:grid-cols-8 gap-1">
+        <div className="grid grid-cols-4 gap-1">
         {data.map((cardData: CardData, index: number) => (
             <motion.div
               key={cardData.title}

@@ -24,7 +24,7 @@ const Card = ({ title, link, description, icons }: Project) => {
   return (
     <Fragment>
       <CardLink
-        className={`p-6 xl:p-12 sm:rounded-lg bg-[#000000] text-[#D69400] ${!isCardOpened ? 'hover:cursor-pointer' : ''}`}
+        className={`p-6 lg:p-8 sm:rounded-lg bg-[#000000] text-[#D69400] ${!isCardOpened ? 'hover:cursor-pointer' : ''}`}
         ref={card}
         opened = {isCardOpened}
         layout

@@ -24,7 +24,7 @@ const Projects = () => {
     <div
       id="about"
     >
-      <div className="2xl:rounded-lg bg-[#D69400] py-16 p-5 sm:p-10 md:p-20 max-w-[100rem] mx-auto 2xl:my-5">
+      <div className="lg:rounded-lg bg-[#D69400] py-16 p-5 sm:p-10 md:p-20 max-w-[60rem] mx-auto">
         <motion.div
           initial={{ opacity: 0, scale: 0.75}} 
           transition={{ duration: 0.5, easeOut: true }} 
@@ -35,12 +35,12 @@ const Projects = () => {
             PROJECTS
           </h6>
           <div
-            className="text-4xl text-black lg:text-5xl font-sans font-bold mt-4 mb-0 md:mt-6 lg:mt-8"
+            className="text-4xl text-black font-sans font-bold mt-4 mb-0"
           >
             <h1>Here are some things I've worked on:</h1>
           </div>
         </motion.div>
-        <div className="mt-10 grid md:grid-cols-2 xl:grid-cols-4 gap-3">
+        <div className="mt-10 grid lg:grid-cols-2 gap-3">
           {data.map((project, index) => (
             <motion.div
               key={project.title}

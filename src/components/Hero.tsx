@@ -5,16 +5,12 @@ import { OrbitControls } from "@react-three/drei";
 import Computer from "./Computer";
 
 const ResponsiveCanvas = () => {
-  const [canvasHeight, setCanvasHeight] = useState(
-    window.innerWidth > 1023 ? 800 : 500
-  );
 
   const [interactive, setInteractive] = useState(
     window.innerWidth > 1023 ? "auto" : "none"
   );
 
   const handleResize = () => {
-    setCanvasHeight(window.innerWidth > 1023 ? 800 : 500);
     setInteractive(window.innerWidth > 1023 ? "auto" : "none");
   };
 
@@ -31,7 +27,7 @@ const ResponsiveCanvas = () => {
     <Canvas
       camera={{ position: [1, 2, 3] }}
       //@ts-ignore
-      style={{ height: `${canvasHeight}px`, pointerEvents: `${interactive}` }}
+      style={{ height: `500px`, pointerEvents: `${interactive}` }}
     >
       <OrbitControls 
         enableZoom={false} 
@@ -49,17 +45,17 @@ const ResponsiveCanvas = () => {
 
 const Hero = () => {
   return (
-    <div className="max-w-[100rem] mx-auto flex flex-col lg:flex-row">
-      <div className="lg:w-1/2 xl:w-2/5 flex items-center justify-center">
-        <div className="my-16 md:my-24 mx-10 lg:mx-24">
-          <h1 className="text-center md:text-right text-5xl md:text-7xl xl:text-8xl font-sans font-bold">
+    <div className="max-w-[70rem] mx-auto flex flex-col lg:flex-row">
+      <div className="lg:-translate-y-16 lg:w-1/2 flex items-center justify-center">
+        <div className="flex content-end my-16 mx-10">
+          <h1 className="text-center lg:text-left text-5xl lg:text-6xl font-sans font-bold lg:pl-16">
             Hey, my name is{" "}
             <span className="underline font-bold text-[#D69400]">Anees</span>
           </h1>
         </div>
       </div>
 
-      <div className="grow lg:w-1/2 xl:w-3/5">
+      <div className="lg:w-1/2">
         <ResponsiveCanvas />
       </div>
     </div>
