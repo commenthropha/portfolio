@@ -24,7 +24,7 @@ const Projects = () => {
     <div
       id="about"
     >
-      <div className="lg:rounded-lg bg-[#D69400] py-16 p-5 sm:p-10 md:p-20 max-w-[60rem] mx-auto">
+      <div className="lg:rounded-lg bg-[#D69400] py-16 p-5 sm:p-10 md:p-20 max-w-[60rem] mx-auto mb-5">
         <motion.div
           initial={{ opacity: 0, scale: 0.75}} 
           transition={{ duration: 0.5, easeOut: true }} 

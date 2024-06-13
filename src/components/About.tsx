@@ -42,7 +42,7 @@ const About = () => {
   return (
     <div
       id="about"
-      className= "max-w-[60rem] mx-auto py-16 p-5 sm:p-10 lg:-translate-y-24"
+      className= "max-w-[60rem] mx-auto py-16 p-5 sm:p-10 lg:-translate-y-12"
     >
       <div className="max-w-[60rem] mx-auto">
         <motion.div
