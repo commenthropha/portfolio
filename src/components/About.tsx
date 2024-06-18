@@ -17,11 +17,11 @@ import { CardData } from "../public";
 
 const data: Array<CardData> = [
   { title: "Java", image: JavaLogo, background:"bg-[#ffefd6]", text:"text-[#DB380E]" },
-  { title: "Python", image: PythonLogo, background:"bg-[#7199BB]", text:"text-[#F2BB30]" },
-  { title: "Haskell", image: HaskellLogo, background:"bg-[#100717]", text:"text-[#8F4E8B]" },
-  { title: "TypeScript", image: TypeScriptLogo, background: "bg-[#3178C6]", text:"text-[#ffffff]" },
-  { title: "C", image: CLogo, background: "bg-[#ffffff]" , text:"text-[#00599C]" },
-  { title: "React", image: ReactLogo, background: "bg-[#ffffff]" , text:"text-[#61DAFB]" },
+  { title: "Python", image: PythonLogo, background:"bg-[#abc8e0]", text:"text-[#35668F]" },
+  { title: "Haskell", image: HaskellLogo, background:"bg-[#c4b7ed]", text:"text-[#453A62]" },
+  { title: "TypeScript", image: TypeScriptLogo, background: "bg-[#ffffff]", text:"text-[#3178C6]" },
+  { title: "C", image: CLogo, background: "bg-[#bbdafa]" , text:"text-[#00599C]" },
+  { title: "React", image: ReactLogo, background: "bg-[#61DAFB]" , text:"text-[#ffffff]" },
   { title: "NextJS", image: NextJSLogo, background: "bg-[#ffffff]", text:"text-[#000000]" },
   { title: "PostgreSQL", image: PostgreLogo, background: "bg-[#336791]", text:"text-[#ffffff]" },
 ];
