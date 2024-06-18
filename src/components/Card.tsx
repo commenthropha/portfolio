@@ -24,7 +24,7 @@ const Card = ({ title, link, description, icons }: Project) => {
   return (
     <Fragment>
       <CardLink
-        className={`p-6 lg:p-8 sm:rounded-lg bg-[#000000] text-[#D69400] ${!isCardOpened ? 'hover:cursor-pointer' : ''}`}
+        className={`p-6 sm:rounded-lg bg-[#000000] text-[#D69400] ${!isCardOpened ? 'flex flex-col justify-between hover:cursor-pointer' : ''}`}
         ref={card}
         opened = {isCardOpened}
         layout
@@ -45,14 +45,16 @@ const Card = ({ title, link, description, icons }: Project) => {
             <RxCross1 className="hover:cursor-pointer"/>
           </div>
         )}
-        <motion.div className="flex mb-1" layout="position">
-          {icons.map(([Icon, color]) => (
-            <Icon color={color} size={24} className="mr-1"/>
-          ))}
-        </motion.div>
-        <motion.h1 className="text-xl font-bold" layout="position">
-          {title}
-        </motion.h1>
+        <div>
+          <motion.div className="flex mb-1" layout="position">
+            {icons.map(([Icon, color]) => (
+              <Icon color={color} size={24} className="mr-1"/>
+            ))}
+          </motion.div>
+          <motion.h1 className="text-lg font-bold" layout="position">
+            {title}
+          </motion.h1>
+        </div>
         {isCardOpened && (
           <div>
             {link ? <p className="font-mono mt-1">Link: <a className ="text-[#61DAFB] visited:text-purple-400 underline" href={link}>GitHub Page</a></p> : <p className="mt-1 font-mono">Link: Closed-Source</p>}
@@ -64,7 +66,7 @@ const Card = ({ title, link, description, icons }: Project) => {
           </div>
         )}
         {!isCardOpened && (
-          <p className="text-white mt-8 text-sm flex items-center">See more about this project<FaArrowRight className="ml-1 text-[#785EF0]"/></p>
+          <p className="mt-8 text-xs flex items-center text-[#785EF0]">Learn More<FaArrowRight className="ml-1 text-[#785EF0]"/></p>
         )}
       </CardLink>
       {isCardOpened && (
