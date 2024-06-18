@@ -8,7 +8,7 @@ import {
   ReactLogo,
   NextJSLogo,
   PostgreLogo,
-  TailwindLogo
+  CLogo
 // @ts-ignore
 } from "../assets";
 // @ts-ignore
@@ -20,10 +20,10 @@ const data: Array<CardData> = [
   { title: "Python", image: PythonLogo, background:"bg-[#7199BB]", text:"text-[#F2BB30]" },
   { title: "Haskell", image: HaskellLogo, background:"bg-[#100717]", text:"text-[#8F4E8B]" },
   { title: "TypeScript", image: TypeScriptLogo, background: "bg-[#3178C6]", text:"text-[#ffffff]" },
+  { title: "C", image: CLogo, background: "bg-[#ffffff]" , text:"text-[#00599C]" },
   { title: "React", image: ReactLogo, background: "bg-[#ffffff]" , text:"text-[#61DAFB]" },
   { title: "NextJS", image: NextJSLogo, background: "bg-[#ffffff]", text:"text-[#000000]" },
   { title: "PostgreSQL", image: PostgreLogo, background: "bg-[#336791]", text:"text-[#ffffff]" },
-  { title: "TailwindCSS", image: TailwindLogo, background: "bg-[#ffffff]" , text:"text-[#38BDF8]" },
 ];
 
 const defaultOptions = {
