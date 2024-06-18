@@ -16,7 +16,7 @@ import { Tilt } from "react-tilt";
 import { CardData } from "../public";
 
 const data: Array<CardData> = [
-  { title: "Java", image: JavaLogo, background:"bg-[#ffd99e]", text:"text-[#DB380E]" },
+  { title: "Java", image: JavaLogo, background:"bg-[#ffefd6]", text:"text-[#DB380E]" },
   { title: "Python", image: PythonLogo, background:"bg-[#7199BB]", text:"text-[#F2BB30]" },
   { title: "Haskell", image: HaskellLogo, background:"bg-[#100717]", text:"text-[#8F4E8B]" },
   { title: "TypeScript", image: TypeScriptLogo, background: "bg-[#3178C6]", text:"text-[#ffffff]" },
