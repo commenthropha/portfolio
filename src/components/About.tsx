@@ -17,7 +17,7 @@ import { CardData } from "../public";
 
 const data: Array<CardData> = [
   { title: "Java", image: JavaLogo, background:"bg-[#ffefd6]", text:"text-[#DB380E]" },
-  { title: "Python", image: PythonLogo, background:"bg-[#abc8e0]", text:"text-[#35668F]" },
+  { title: "Python", image: PythonLogo, background:"bg-[#d8e3ed]", text:"text-[#35668F]" },
   { title: "Haskell", image: HaskellLogo, background:"bg-[#c4b7ed]", text:"text-[#453A62]" },
   { title: "TypeScript", image: TypeScriptLogo, background: "bg-[#ffffff]", text:"text-[#3178C6]" },
   { title: "C", image: CLogo, background: "bg-[#bbdafa]" , text:"text-[#00599C]" },
