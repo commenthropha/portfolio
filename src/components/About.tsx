@@ -64,7 +64,7 @@ const About = () => {
             className="my-6 mb-12 md:my-8 lg:my-10 2xl:my-16 text-md lg:text-lg font-sans mx-2 text-violet-100"
                     >
             I am a Computer Science student at the <span className="font-mono text-[#D69400]">University of Warwick</span>, currently on an intercalated year working as a Java Software Engineer at <span className="font-mono text-[#D69400]">Siemens</span> 
-            . I have a strong background in software development, having worked with a wealth of programming languages across a range of paradigms. I maintain an ongoing personal interest in front-end web development, with extensive experience leading a team 
+            . I have a strong background in software development, having worked with a wealth of programming languages across a range of paradigms. I maintain an ongoing personal interest in full-stack web development, with extensive experience leading a team 
             for a university project as well as developing my skills through personal projects on GitHub.</p>
           </motion.div>
           <motion.div
