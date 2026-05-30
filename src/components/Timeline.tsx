@@ -80,7 +80,7 @@ const Timeline = () => {
       </motion.div>
 
     <hr className="border-t-4 border-stone-300 dark:border-stone-700" />
-    <VerticalTimeline lineColor={light ? "rgb(214 211 208)" : "rgb(68 65 61)"}>
+    <VerticalTimeline className="overflow-x-hidden" lineColor={light ? "rgb(214 211 208)" : "rgb(68 65 61)"}>
         {timelineData.map((item, index) => (
           <VerticalTimelineElement
             key={index}
