@@ -17,7 +17,7 @@ const Navbar = () => {
           sunColor="rgb(120 113 108)"
           moonColor="rgb(120 113 108)"
         />
-        <a href="X" rel="noopener noreferrer">
+        <a href="https://www.linkedin.com/in/anees-haroon/" rel="noopener noreferrer">
           <AiFillLinkedin
             size="28px"
             className="text-stone-500 hover:text-stone-300 dark:hover:text-stone-300 transition-colors duration-200"
