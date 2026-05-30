@@ -64,7 +64,7 @@ const About = () => {
                 <p className="font-mono text-sm tracking-widest text-stone-600 dark:text-stone-500 mb-2 uppercase">Role</p>
                 <p className="text-sm lg:text-base font-sans text-stone-700 dark:text-stone-400 leading-relaxed">
                   I am a <span className="font-mono font-bold text-stone-900 dark:text-stone-200">Java Software Engineer</span>{" "}
-                  working at X, building production software since 2024. Day-to-day I work in an{" "}
+                  working at Siemens, building production software since 2024. Day-to-day I work in an{" "}
                   <span className="font-mono font-bold text-stone-900 dark:text-stone-200">Agile</span> environment,
                   contributing to EPICs within{" "}
                   <span className="font-mono font-bold text-stone-900 dark:text-stone-200">Scrum</span> teams
