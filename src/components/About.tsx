@@ -63,7 +63,8 @@ const About = () => {
               <div className="flex-1">
                 <p className="font-mono text-sm tracking-widest text-stone-600 dark:text-stone-500 mb-2 uppercase">Role</p>
                 <p className="text-sm lg:text-base font-sans text-stone-700 dark:text-stone-400 leading-relaxed">
-                  I am a <span className="font-mono font-bold text-stone-900 dark:text-stone-200">Java Software Engineer</span>{" "}
+                  I am a <span className="font-mono font-bold text-stone-900 dark:text-stone-200">Java</span>{" "}
+                  <span className="font-mono font-bold text-stone-900 dark:text-stone-200">software</span> <span className="font-mono font-bold text-stone-900 dark:text-stone-200">engineer</span>{" "}
                   working at Siemens, building production software since 2024. Day-to-day I work in an{" "}
                   <span className="font-mono font-bold text-stone-900 dark:text-stone-200">Agile</span> environment,
                   contributing to EPICs within{" "}
@@ -84,7 +85,8 @@ const About = () => {
                 <p className="font-mono text-sm tracking-widest text-stone-600 dark:text-stone-500 mb-2 uppercase">Interests</p>
                 <p className="text-sm lg:text-base font-sans text-stone-600 dark:text-stone-400 leading-relaxed">
                   Outside my professional role, I maintain a keen interest in{" "}
-                  <span className="font-mono font-bold text-stone-900 dark:text-stone-200">modern web development</span>.
+                  <span className="font-mono font-bold text-stone-900 dark:text-stone-200">modern</span>{" "}
+                  <span className="font-mono font-bold text-stone-900 dark:text-stone-200">web</span> <span className="font-mono font-bold text-stone-900 dark:text-stone-200">development</span>.
                   I am particularly drawn to how migrating legacy software to contemporary
                   service-based architectures can be paired with modern web interfaces to build
                   lightweight, accessible products.
@@ -99,12 +101,12 @@ const About = () => {
               <div className="flex-1">
                 <p className="font-mono text-sm tracking-widest text-stone-600 dark:text-stone-500 mb-2 uppercase">Goals</p>
                 <p className="text-sm lg:text-base font-sans text-stone-600 dark:text-stone-400 leading-relaxed">
-                  In the <span className="font-mono font-bold text-stone-900 dark:text-stone-200">short term</span> — developing
+                  In the <span className="font-mono font-bold text-stone-900 dark:text-stone-200">short</span> <span className="font-mono font-bold text-stone-900 dark:text-stone-200">term</span> — developing
                   the ability to architect software at scale, building on best practices across
                   extensible design and quality engineering.
                 </p>
                 <p className="mt-3 text-sm lg:text-base font-sans text-stone-600 dark:text-stone-400 leading-relaxed">
-                  In the <span className="font-mono font-bold text-stone-900 dark:text-stone-200">long term</span> — reaching
+                  In the <span className="font-mono font-bold text-stone-900 dark:text-stone-200">long</span> <span className="font-mono font-bold text-stone-900 dark:text-stone-200">term</span> — reaching
                   a position where I can open doors for ambitious junior engineers and facilitate
                   a genuine platform for them to grow.
                 </p>
