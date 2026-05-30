@@ -41,6 +41,8 @@ const timelineData = [
   },
 ];
 
+const reversedTimelineData = [...timelineData].reverse();
+
 const Timeline = () => {
   const { light } = useTheme();
 
@@ -81,7 +83,7 @@ const Timeline = () => {
 
     <hr className="border-t-4 border-stone-300 dark:border-stone-700" />
     <VerticalTimeline className="overflow-x-hidden" lineColor={light ? "rgb(214 211 208)" : "rgb(68 65 61)"}>
-        {timelineData.map((item, index) => (
+        {reversedTimelineData.map((item, index) => (
           <VerticalTimelineElement
             key={index}
             date={item.date}
