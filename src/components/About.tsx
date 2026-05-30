@@ -133,6 +133,7 @@ const About = () => {
           {data.map((cardData, index) => (
             <Tilt options={defaultOptions}>
               <TechCard
+                key = {index}
                 title={cardData.title}
                 image={cardData.image}
               />
