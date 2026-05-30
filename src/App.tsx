@@ -1,5 +1,5 @@
 //@ts-ignore
-import { Navbar, Hero, About, Projects } from "./components"
+import { Navbar, Hero, About, Projects, Timeline } from "./components"
 import { motion, useScroll, useSpring } from "framer-motion"
 
 const App = () => {
@@ -12,11 +12,11 @@ const App = () => {
 
   return (
     <div>
-      <motion.div className="fixed top-0 left-0 right-0 h-1 z-10 bg-[#785EF0] transform origin-left" style={{ scaleX }} />
+      <motion.div className="fixed top-0 left-0 right-0 h-1 z-10 bg-stone-100 transform origin-left" style={{ scaleX }} />
       <Navbar />
       <Hero />
       <About />
-      <Projects />
+      <Timeline />
     </div>
   )
 }

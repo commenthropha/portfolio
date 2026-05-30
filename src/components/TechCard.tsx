@@ -1,25 +1,18 @@
 import { CardData } from "../public";
 
-const TechCard = ({ title, image, background, text }: CardData) => {
-    return (
-      <div className="fade-in-bottom m-1 md:m-3">
-        <div
-          id="content"
-          className={`${background} ${text} rounded-xl flex flex-col justify-center items-center p-2 sm:p-4`}
-        >
-          <img
-            id="image"
-            className="h-[2rem] md:h-[3rem] m-5 sm:m-3"
-            src={image}
-            alt="React Logo"
-          />
-          <div className="hidden md:block font-mono font-bold">
-            {title}
-          </div>
-        </div>
-      </div>
-    );
-  };
-  
-  export default TechCard;
-  
+const TechCard = ({ title, image }: Pick<CardData, "title" | "image">) => {
+  return (
+    <div className="fade-in-bottom flex flex-col items-center gap-2 p-3 group">
+      <img
+        className="h-8 md:h-10"
+        src={image}
+        alt={title}
+      />
+      <span className="hidden md:block font-mono text-xs text-stone-600 group-hover:text-stone-950 dark:text-stone-500 dark:group-hover:text-stone-300 transition-colors duration-300">
+        {title}
+      </span>
+    </div>
+  );
+};
+
+export default TechCard;

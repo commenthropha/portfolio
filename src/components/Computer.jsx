@@ -8,7 +8,7 @@ const Computer = () => {
   const meshRef = useRef();
 
   return (
-    <mesh ref={meshRef} position={[-9, 0, 0]} scale={[1, 1, 1]}>
+    <mesh ref={meshRef} position={[0, 0, 0]} scale={[1, 1, 1]}>
       <primitive object={gltf.scene} />
     </mesh>
   );

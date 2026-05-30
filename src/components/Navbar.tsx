@@ -1,28 +1,28 @@
-import logo from "../logo.webp";
-import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
-import styles from "./styles/Navbar.module.css";
+import { AiFillLinkedin } from "react-icons/ai";
+//@ts-ignore
+import { DarkModeSwitch } from "react-toggle-dark-mode";
+import { useTheme } from "../ThemeContext";
 
 const Navbar = () => {
+  const { light, toggle } = useTheme();
+
   return (
     <div className="max-w-[80rem] mx-auto flex flex-row items-center justify-between p-2 px-4">
-      <div id="logo" className="justify-center flex flex-column m-2 w-10 h-10">
-        <img src={logo} alt="Logo" />
-      </div>
-      <div id="icons" className="flex flex-row">
-        <a href="https://github.com/commenthropha" rel="noopener noreferrer">
-          <div className={`${styles.icon}`}>
-            <AiFillGithub size="40px" />
-          </div>
+        <DarkModeSwitch
+          checked={!light}
+          onChange={(checked:boolean) => {
+            if (checked !== !light) toggle();
+          }}
+          size={24}
+          sunColor="rgb(120 113 108)"
+          moonColor="rgb(120 113 108)"
+        />
+        <a href="X" rel="noopener noreferrer">
+          <AiFillLinkedin
+            size="28px"
+            className="text-stone-500 hover:text-stone-300 dark:hover:text-stone-300 transition-colors duration-200"
+          />
         </a>
-        <a
-          href="https://www.linkedin.com/in/anees-haroon"
-          rel="noopener noreferrer"
-        >
-          <div className={`${styles.icon}`}>
-            <AiFillLinkedin size="40px" />
-          </div>
-        </a>
-      </div>
     </div>
   );
 };
