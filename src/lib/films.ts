@@ -11,8 +11,10 @@ export function getFilms(): FilmPreview[] {
   return Object.entries(modules)
     .map(([path, mod]: [string, any]) => {
       const slug = path.split("/").pop()!.replace(".mdx", "");
-      const posterKey = `../assets/${mod.frontmatter.poster}`;
-      const url = `/src/assets${(imageModules[posterKey] as string) ?? mod.frontmatter.poster}`;
+      const posterKey = `../assets${mod.frontmatter.poster}`;
+      const url =
+        (imageModules[posterKey] as string | undefined) ??
+        mod.frontmatter.poster;
 
       return {
         slug,
@@ -35,8 +37,9 @@ export function getFilmBySlug(
   );
   if (!entry) throw new Error(`Film not found: ${slug}`);
   const [, mod]: [string, any] = entry;
-  const posterKey = `../assets/${mod.frontmatter.poster}`;
-  const url = `/src/assets${(imageModules[posterKey] as string) ?? mod.frontmatter.poster}`;
+  const posterKey = `../assets${mod.frontmatter.poster}`;
+  const url =
+    (imageModules[posterKey] as string | undefined) ?? mod.frontmatter.poster;
 
   return {
     slug,
