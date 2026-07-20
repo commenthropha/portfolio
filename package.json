@@ -10,15 +10,25 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mdx-js/react": "^3.1.1",
+    "@mdx-js/rollup": "^3.1.1",
     "@swc/helpers": "^0.5.23",
+    "@tailwindcss/typography": "^0.5.20",
+    "@tanstack/react-router": "^1.170.18",
+    "gray-matter": "^4.0.3",
+    "hamburger-react": "^2.5.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-toggle-dark-mode": "^2.0.0",
-    "react-vertical-timeline-component": "^4.0.0"
+    "react-vertical-timeline-component": "^4.0.0",
+    "remark-frontmatter": "^5.0.0",
+    "remark-mdx-frontmatter": "^5.2.0"
   },
   "devDependencies": {
     "@react-three/drei": "^9.102.3",
     "@react-three/fiber": "^8.15.19",
+    "@tanstack/router-plugin": "^1.168.20",
+    "@types/mdx": "^2.0.14",
     "@types/react": "^18.2.64",
     "@types/react-dom": "^18.2.21",
     "@typescript-eslint/eslint-plugin": "^7.1.1",

@@ -1,6 +1,6 @@
-import { useRef } from 'react';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import { useLoader } from '@react-three/fiber';
+import { useRef } from "react";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { useLoader } from "@react-three/fiber";
 
 const Computer = () => {
   const gltf = useLoader(GLTFLoader, "computer.glb");

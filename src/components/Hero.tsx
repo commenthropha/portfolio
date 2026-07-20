@@ -6,7 +6,7 @@ import Computer from "./Computer";
 
 const ResponsiveCanvas = () => {
   const [interactive, setInteractive] = useState(
-    window.innerWidth > 1023 ? "auto" : "none"
+    window.innerWidth > 1023 ? "auto" : "none",
   );
 
   const handleResize = () => {
@@ -46,7 +46,7 @@ const Hero = () => {
           <div className="text-center lg:text-left lg:pl-16">
             <h1 className="text-5xl lg:text-6xl font-sans font-bold text-stone-900 dark:text-stone-100">
               Hey, I'm{" "}
-              <span className="text-stone-600 dark:text-stone-300 underline decoration-stone-400 dark:decoration-stone-600 underline-offset-4">
+              <span className="text-stone-700 dark:text-stone-300 underline decoration-stone-400 dark:decoration-stone-600 underline-offset-4">
                 Anees
               </span>
             </h1>

@@ -1,13 +1,13 @@
 //@ts-ignore
-import { Navbar, Hero, About, Projects, Timeline } from "./components"
-import { motion, useScroll, useSpring } from "framer-motion"
+import { Navbar, Hero, About, Projects, Timeline } from "./components";
+import { motion, useScroll, useSpring } from "framer-motion";
 
 const App = () => {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 200,
     damping: 30,
-    restDelta: 0.001
+    restDelta: 0.001,
   });
 
   return (
@@ -18,7 +18,7 @@ const App = () => {
       <About />
       <Timeline />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

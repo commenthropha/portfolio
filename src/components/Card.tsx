@@ -24,9 +24,9 @@ const Card = ({ title, link, description, icons }: Project) => {
   return (
     <Fragment>
       <CardLink
-        className={`p-6 sm:rounded-lg bg-[#000000] text-[#D69400] ${!isCardOpened ? 'flex flex-col justify-between hover:cursor-pointer' : ''}`}
+        className={`p-6 sm:rounded-lg bg-[#000000] text-[#D69400] ${!isCardOpened ? "flex flex-col justify-between hover:cursor-pointer" : ""}`}
         ref={card}
-        opened = {isCardOpened}
+        opened={isCardOpened}
         layout
         onClick={() => {
           setIsCardOpened(true);
@@ -35,20 +35,27 @@ const Card = ({ title, link, description, icons }: Project) => {
               //@ts-ignore
               width: card.current?.clientWidth,
               //@ts-ignore
-              height: card.current?.clientHeight
+              height: card.current?.clientHeight,
             });
           }
         }}
       >
         {isCardOpened && (
-          <div id="Test" onClick={(e) => { e.stopPropagation(); setIsCardOpened(false); }} className="flex text-xl flex-col items-end mb-5 text-white">
-            <RxCross1 className="hover:cursor-pointer"/>
+          <div
+            id="Test"
+            onClick={(e) => {
+              e.stopPropagation();
+              setIsCardOpened(false);
+            }}
+            className="flex text-xl flex-col items-end mb-5 text-white"
+          >
+            <RxCross1 className="hover:cursor-pointer" />
           </div>
         )}
         <div>
           <motion.div className="flex mb-1" layout="position">
             {icons.map(([Icon, color]) => (
-              <Icon color={color} size={24} className="mr-1"/>
+              <Icon color={color} size={24} className="mr-1" />
             ))}
           </motion.div>
           <motion.h1 className="text-lg font-bold" layout="position">
@@ -57,16 +64,33 @@ const Card = ({ title, link, description, icons }: Project) => {
         </div>
         {isCardOpened && (
           <div>
-            {link ? <p className="font-mono mt-1">Link: <a className ="text-[#61DAFB] visited:text-purple-400 underline" href={link}>GitHub Page</a></p> : <p className="mt-1 font-mono">Link: Closed-Source</p>}
+            {link ? (
+              <p className="font-mono mt-1">
+                Link:{" "}
+                <a
+                  className="text-[#61DAFB] visited:text-purple-400 underline"
+                  href={link}
+                >
+                  GitHub Page
+                </a>
+              </p>
+            ) : (
+              <p className="mt-1 font-mono">Link: Closed-Source</p>
+            )}
             <div className="text-white">
-              {description.split('\n').map((line, i) => (
-                <p className="m-3" key={i}>{line}</p> 
+              {description.split("\n").map((line, i) => (
+                <p className="m-3" key={i}>
+                  {line}
+                </p>
               ))}
             </div>
           </div>
         )}
         {!isCardOpened && (
-          <p className="mt-8 text-xs flex items-center text-[#785EF0]">Learn More<FaArrowRight className="ml-1 text-[#785EF0]"/></p>
+          <p className="mt-8 text-xs flex items-center text-[#785EF0]">
+            Learn More
+            <FaArrowRight className="ml-1 text-[#785EF0]" />
+          </p>
         )}
       </CardLink>
       {isCardOpened && (
@@ -74,18 +98,15 @@ const Card = ({ title, link, description, icons }: Project) => {
           <div
             style={{
               width: cardDimensions.width,
-              height: cardDimensions.height
+              height: cardDimensions.height,
             }}
           ></div>
-          <CardBackground
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-          />
+          <CardBackground initial={{ opacity: 0 }} animate={{ opacity: 1 }} />
         </Fragment>
       )}
     </Fragment>
   );
-}
+};
 
 const CardLink = styled(motion.div)<{ opened: boolean }>`
   height: 100%;
@@ -93,7 +114,7 @@ const CardLink = styled(motion.div)<{ opened: boolean }>`
   ${(props) =>
     props.opened &&
     css`
-      border: 1px solid #322763; 
+      border: 1px solid #322763;
       width: min(40rem, 95%);
       height: calc(100% - 10rem);
       overflow-y: auto;
@@ -130,4 +151,4 @@ const CardBackground = styled(motion.div)`
   background: rgba(10, 10, 10, 0.7);
 `;
 
-export default Card
+export default Card;
