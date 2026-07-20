@@ -16,7 +16,7 @@ const FilmsComponent = () => {
         viewport={{ once: true, amount: 0.1 }}
       >
         <h6 className="font-mono text-lg text-stone-500 tracking-widest">
-          FILM REVIEWS
+          FILM ESSAYS
         </h6>
         <h1 className="text-4xl font-sans font-bold mt-2 mb-10 text-stone-900 dark:text-stone-100">
           What I've been watching

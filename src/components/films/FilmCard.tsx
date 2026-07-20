@@ -23,9 +23,15 @@ const FilmCard = ({ film }: { film: FilmPreview }) => {
                   year: "numeric",
                 })}
               </p>
-              <h3 className="text-base md:text-lg xl:text-xl font-sans font-bold text-stone-900 dark:text-stone-100 group-hover:text-stone-600 dark:group-hover:text-stone-300 transition-colors">
-                {film.title}
-              </h3>
+              <div className="flex items-baseline gap-2 flex-wrap">
+                <h3 className="text-base md:text-lg xl:text-xl font-sans font-bold text-stone-900 dark:text-stone-100 group-hover:text-stone-600 dark:group-hover:text-stone-300 transition-colors">
+                  {film.title}
+                </h3>
+
+                <span className="text-xs md:text-sm xl:text-md font-medium text-stone-500 dark:text-stone-400">
+                  ({film.year})
+                </span>
+              </div>
               <p className="text-xs text-stone-600 dark:text-stone-400 mt-1">
                 {film.subtitle}
               </p>

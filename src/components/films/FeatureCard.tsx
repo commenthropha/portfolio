@@ -23,9 +23,15 @@ const FeatureCard = ({ film }: { film: FilmPreview }) => {
                   year: "numeric",
                 })}
               </p>
-              <h3 className="text-2xl md:text-3xl xl:text-4xl font-sans font-bold text-stone-900 dark:text-stone-100 group-hover:text-stone-600 dark:group-hover:text-stone-300 transition-colors">
-                {film.title}
-              </h3>
+              <div className="flex items-baseline gap-2 flex-wrap">
+                <h3 className="text-2xl md:text-3xl xl:text-4xl font-sans font-bold text-stone-900 dark:text-stone-100 group-hover:text-stone-600 dark:group-hover:text-stone-300 transition-colors">
+                  {film.title}
+                </h3>
+
+                <span className="text-lg md:text-xl xl:text-2xl font-medium text-stone-500 dark:text-stone-400">
+                  ({film.year})
+                </span>
+              </div>
               <p className="text-sm text-stone-600 dark:text-stone-400 mt-2">
                 {film.subtitle}
               </p>

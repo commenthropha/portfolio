@@ -17,8 +17,10 @@ export function getFilms(): FilmPreview[] {
       return {
         slug,
         title: mod.frontmatter.title,
+        year: mod.frontmatter.year,
         subtitle: mod.frontmatter.subtitle,
         date: mod.frontmatter.date,
+        spoilers: mod.frontmatter.spoilers,
         mainImage: { url, alt: mod.frontmatter.title },
       };
     })
@@ -40,7 +42,9 @@ export function getFilmBySlug(
     slug,
     title: mod.frontmatter.title,
     subtitle: mod.frontmatter.subtitle,
+    year: mod.frontmatter.year,
     date: mod.frontmatter.date,
+    spoilers: mod.frontmatter.spoilers,
     mainImage: { url, alt: mod.frontmatter.title },
     Component: mod.default,
   };
