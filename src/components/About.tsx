@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import { Link } from "@tanstack/react-router";
 import { RiComputerLine } from "react-icons/ri";
 import {
@@ -8,6 +9,31 @@ import {
   PiCar,
 } from "react-icons/pi";
 
+const variants = {
+  hidden: { opacity: 0, scale: 0.75 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
+};
+
+const AnimatedSection = ({ children }: { children: React.ReactNode }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
+
+  return (
+    <motion.div
+      ref={ref}
+      variants={variants}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
 const About = () => {
   return (
     <div
@@ -15,21 +41,18 @@ const About = () => {
       className="max-w-[60rem] mx-auto py-16 p-5 sm:p-10 lg:-translate-y-12"
     >
       <div className="max-w-[60rem] mx-auto">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.75 }}
-          transition={{ duration: 0.5, easeOut: true }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, amount: 0.1 }}
-        >
+        <AnimatedSection>
           <h6 className="font-mono text-lg text-stone-800 dark:text-stone-500 tracking-widest">
             ABOUT ME
           </h6>
           <div className="text-4xl font-sans font-bold mt-2 mb-10">
             <h1 className="text-stone-900 dark:text-stone-100">Who am I?</h1>
           </div>
+        </AnimatedSection>
 
-          <div className="flex flex-col divide-y divide-stone-200 dark:divide-stone-800">
-            {/* Role */}
+        <div className="flex flex-col divide-y divide-stone-200 dark:divide-stone-800">
+          {/* Role */}
+          <AnimatedSection>
             <div className="flex gap-5 py-7">
               <div className="flex-shrink-0 w-9 h-9 rounded-full bg-stone-100 dark:bg-stone-800 flex items-center justify-center mt-0.5">
                 <RiComputerLine className="text-stone-500 text-sm" />
@@ -62,15 +85,19 @@ const About = () => {
                 </p>
               </div>
             </div>
+          </AnimatedSection>
 
-            {/* Interests heading */}
-            <div className="py-7">
+          {/* Interests */}
+          <div className="py-7">
+            <AnimatedSection>
               <h6 className="font-mono text-lg text-stone-800 dark:text-stone-500 tracking-widest">
                 INTERESTS
               </h6>
+            </AnimatedSection>
 
-              <div className="flex flex-col divide-y divide-stone-300 dark:divide-stone-900">
-                {/* Film */}
+            <div className="flex flex-col divide-y divide-stone-300 dark:divide-stone-900">
+              {/* Film */}
+              <AnimatedSection>
                 <div className="flex gap-5 py-6">
                   <div className="flex-shrink-0 w-9 h-9 rounded-full bg-stone-100 dark:bg-stone-800 flex items-center justify-center mt-0.5">
                     <PiFilmSlate className="text-stone-500 text-sm" />
@@ -97,8 +124,10 @@ const About = () => {
                     </p>
                   </div>
                 </div>
+              </AnimatedSection>
 
-                {/* Lifting */}
+              {/* Lifting */}
+              <AnimatedSection>
                 <div className="flex gap-5 py-6">
                   <div className="flex-shrink-0 w-9 h-9 rounded-full bg-stone-100 dark:bg-stone-800 flex items-center justify-center mt-0.5">
                     <PiBarbell className="text-stone-500 text-sm" />
@@ -118,8 +147,10 @@ const About = () => {
                     </p>
                   </div>
                 </div>
+              </AnimatedSection>
 
-                {/* Games */}
+              {/* Games */}
+              <AnimatedSection>
                 <div className="flex gap-5 py-6">
                   <div className="flex-shrink-0 w-9 h-9 rounded-full bg-stone-100 dark:bg-stone-800 flex items-center justify-center mt-0.5">
                     <PiGameController className="text-stone-500 text-sm" />
@@ -139,8 +170,10 @@ const About = () => {
                     </p>
                   </div>
                 </div>
+              </AnimatedSection>
 
-                {/* Cars */}
+              {/* Cars */}
+              <AnimatedSection>
                 <div className="flex gap-5 py-6">
                   <div className="flex-shrink-0 w-9 h-9 rounded-full bg-stone-100 dark:bg-stone-800 flex items-center justify-center mt-0.5">
                     <PiCar className="text-stone-500 text-sm" />
@@ -161,15 +194,17 @@ const About = () => {
                     </p>
                   </div>
                 </div>
-              </div>
+              </AnimatedSection>
+            </div>
 
+            <AnimatedSection>
               <p className="mt-6 text-sm font-sans text-stone-500 dark:text-stone-500 italic">
                 If any of this resonates, feel free to reach out - I'm always
                 happy to talk!
               </p>
-            </div>
+            </AnimatedSection>
           </div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );
