@@ -8,7 +8,7 @@ import { useTheme } from "../ThemeContext";
 
 const navLinks = [
   { label: "PORTFOLIO", to: "/" },
-  { label: "FILM ESSAYS", to: "/films" },
+  { label: "FILM", to: "/films" },
   { label: "CAREER", to: "/career" },
 ];
 

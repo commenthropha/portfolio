@@ -8,7 +8,7 @@ import {
   Action,
   Character,
 } from "../../components/films/screenplay";
-import { ImageWithCaption, Quote } from "../../components/films";
+import { ImageWithCaption, Quote, ReviewHeader } from "../../components/films";
 import { VscTextSize } from "react-icons/vsc";
 
 const fontSizes = ["text-md", "text-xl", "text-2xl", "text-3xl"] as const;
@@ -57,6 +57,7 @@ const FilmComponent = () => {
     Script,
     ImageWithCaption,
     Quote,
+    ReviewHeader
   };
 
   return (
