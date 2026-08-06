@@ -70,9 +70,11 @@ const FilmComponent = () => {
           ({year})
         </h3>
       </div>
+
       <h2 className="text-2xl italic my-4 text-stone-700 dark:text-stone-300">
         {subtitle}
       </h2>
+      
       <p className="font-mono font-extrabold text-sm tracking-widest text-stone-500 uppercase mb-10">
         {new Date(date).toLocaleDateString("en-GB", {
           day: "numeric",
