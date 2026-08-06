@@ -6,7 +6,7 @@ const FeatureCard = ({ film }: { film: FilmPreview }) => {
     <Link to="/films/$slug" params={{ slug: film.slug }}>
       <div className="bg-stone-100 dark:bg-stone-900 border border-stone-200 dark:border-stone-800 hover:border-stone-400 dark:hover:border-stone-600 hover:bg-stone-200 dark:hover:bg-stone-800 rounded-sm mb-3 group transition-colors">
         <div className="flex flex-row-reverse justify-between h-full">
-          <div className="relative w-[10rem] sm:w-[16rem] md:w-[24rem] shrink-0 overflow-hidden">
+          <div className="relative w-[16rem] md:w-[24rem] shrink-0 overflow-hidden">
             <img
               src={film.mainImage.url}
               alt={film.mainImage.alt ?? film.title}
@@ -24,15 +24,11 @@ const FeatureCard = ({ film }: { film: FilmPreview }) => {
                 })}
               </p>
               <div className="flex items-baseline gap-2 flex-wrap">
-                <h3 className="text-2xl md:text-3xl xl:text-4xl font-sans font-bold text-stone-900 dark:text-stone-100 group-hover:text-stone-600 dark:group-hover:text-stone-300 transition-colors">
+                <h3 className="leading-none text-2xl md:text-3xl xl:text-4xl font-sans font-bold text-stone-900 dark:text-stone-100 group-hover:text-stone-600 dark:group-hover:text-stone-300 transition-colors">
                   {film.title}
                 </h3>
-
-                <span className="text-lg md:text-xl xl:text-2xl font-medium text-stone-500 dark:text-stone-400">
-                  ({film.year})
-                </span>
               </div>
-              <p className="text-sm text-stone-600 dark:text-stone-400 mt-2">
+              <p className="mt-4 text-sm text-stone-600 dark:text-stone-400 mt-2 italic">
                 {film.subtitle}
               </p>
             </div>

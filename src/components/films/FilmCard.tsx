@@ -6,7 +6,7 @@ const FilmCard = ({ film }: { film: FilmPreview }) => {
     <Link to="/films/$slug" params={{ slug: film.slug }}>
       <div className="bg-stone-100 dark:bg-stone-900 border border-stone-200 dark:border-stone-800 hover:border-stone-400 dark:hover:border-stone-600 hover:bg-stone-200 dark:hover:bg-stone-800 rounded-sm my-3 group transition-colors">
         <div className="flex justify-start h-full">
-          <div className="relative w-[8rem] sm:w-[12rem] shrink-0 overflow-hidden">
+          <div className="relative w-[12rem] shrink-0 overflow-hidden">
             <img
               src={film.mainImage.url}
               alt={film.mainImage.alt ?? film.title}
@@ -24,15 +24,11 @@ const FilmCard = ({ film }: { film: FilmPreview }) => {
                 })}
               </p>
               <div className="flex items-baseline gap-2 flex-wrap">
-                <h3 className="text-base md:text-lg xl:text-xl font-sans font-bold text-stone-900 dark:text-stone-100 group-hover:text-stone-600 dark:group-hover:text-stone-300 transition-colors">
+                <h3 className="leading-none text-base md:text-lg xl:text-xl font-sans font-bold text-stone-900 dark:text-stone-100 group-hover:text-stone-600 dark:group-hover:text-stone-300 transition-colors">
                   {film.title}
                 </h3>
-
-                <span className="text-xs md:text-sm xl:text-md font-medium text-stone-500 dark:text-stone-400">
-                  ({film.year})
-                </span>
               </div>
-              <p className="text-xs text-stone-600 dark:text-stone-400 mt-1">
+              <p className="mt-2 text-xs text-stone-600 dark:text-stone-400 mt-1">
                 {film.subtitle}
               </p>
             </div>
