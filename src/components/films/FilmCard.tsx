@@ -6,7 +6,7 @@ const FilmCard = ({ film }: { film: FilmPreview }) => {
     <Link to="/films/$slug" params={{ slug: film.slug }}>
       <div className="bg-stone-100 dark:bg-stone-900 border border-stone-200 dark:border-stone-800 hover:border-stone-400 dark:hover:border-stone-600 hover:bg-stone-200 dark:hover:bg-stone-800 rounded-sm my-3 group transition-colors">
         <div className="flex justify-start h-full">
-          <div className="relative w-[12rem] shrink-0 overflow-hidden">
+          <div className="relative w-[10rem] sm:w-[12rem] shrink-0 overflow-hidden">
             <img
               src={film.mainImage.url}
               alt={film.mainImage.alt ?? film.title}
