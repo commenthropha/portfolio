@@ -8,6 +8,7 @@ const imageModules = import.meta.glob("../assets/**/*.{png,jpg,jpeg,webp}", {
 });
 
 export function getFilms(): FilmPreview[] {
+  
   return Object.entries(modules)
     .map(([path, mod]: [string, any]) => {
       const slug = path.split("/").pop()!.replace(".mdx", "");
