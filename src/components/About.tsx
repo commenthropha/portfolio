@@ -1,5 +1,5 @@
-import { useEffect, useRef } from "react";
-import { motion, useAnimation, useInView } from "framer-motion";
+import { useRef } from "react";
+import { motion } from "framer-motion";
 import { Link } from "@tanstack/react-router";
 import { RiComputerLine } from "react-icons/ri";
 import { PiFilmSlate, PiBarbell, PiSoccerBall, PiCar } from "react-icons/pi";
@@ -15,21 +15,14 @@ const variants = {
 
 const AnimatedSection = ({ children }: { children: React.ReactNode }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.1 });
-  const controls = useAnimation();
-
-  useEffect(() => {
-    if (isInView) {
-      controls.start("visible");
-    }
-  }, [isInView, controls]);
 
   return (
     <motion.div
       ref={ref}
       variants={variants}
       initial="hidden"
-      animate={controls}
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.1 }}
     >
       {children}
     </motion.div>
