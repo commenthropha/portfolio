@@ -21,13 +21,20 @@ const variants = {
 const AnimatedSection = ({ children }: { children: React.ReactNode }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.1 });
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      controls.start("visible");
+    }
+  }, [isInView, controls]);
 
   return (
     <motion.div
       ref={ref}
       variants={variants}
       initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
+      animate={controls}
     >
       {children}
     </motion.div>
