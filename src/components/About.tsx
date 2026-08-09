@@ -167,7 +167,8 @@ const About = () => {
                       <span className="font-bold text-stone-900 dark:text-stone-200">
                         FPL
                       </span>
-                      , with limited success.
+                      , though my table position would suggest I've still got
+                      some way to go.
                     </p>{" "}
                   </div>
                 </div>
