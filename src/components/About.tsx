@@ -1,13 +1,8 @@
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { useEffect, useRef } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
 import { Link } from "@tanstack/react-router";
 import { RiComputerLine } from "react-icons/ri";
-import {
-  PiFilmSlate,
-  PiBarbell,
-  PiGameController,
-  PiCar,
-} from "react-icons/pi";
+import { PiFilmSlate, PiBarbell, PiSoccerBall, PiCar } from "react-icons/pi";
 
 const variants = {
   hidden: { opacity: 0, scale: 0.75 },
@@ -119,8 +114,13 @@ const About = () => {
                       <span className="font-bold text-stone-900 dark:text-stone-200">
                         supernatural horror
                       </span>
-                      . I write analysis on the films that interest me most,
-                      which you can find{" "}
+                      . I write about the films that interest me most;
+                      right now I'm watching and writing about a new film every
+                      day for{" "}
+                      <span className="font-bold text-stone-900 dark:text-stone-200">
+                        500 days
+                      </span>
+                      . You can find all of that{" "}
                       <Link
                         to="/films"
                         className="font-mono font-bold text-stone-900 dark:text-stone-200 underline underline-offset-4 hover:text-stone-500 dark:hover:text-stone-400 transition-colors"
@@ -144,7 +144,7 @@ const About = () => {
                       Strength Training
                     </p>
                     <p className="text-sm lg:text-base font-sans text-stone-800 dark:text-stone-300 leading-relaxed">
-                      I'm drawn to the tension between{" "}
+                      As someone who trains regularly, I'm drawn to the tension between{" "}
                       <span className="font-bold text-stone-900 dark:text-stone-200">
                         evidence-based methodology
                       </span>{" "}
@@ -156,25 +156,26 @@ const About = () => {
                 </div>
               </AnimatedSection>
 
-              {/* Games */}
+              {/* Football */}
               <AnimatedSection>
                 <div className="flex gap-5 py-6">
                   <div className="flex-shrink-0 w-9 h-9 rounded-full bg-stone-100 dark:bg-stone-800 flex items-center justify-center mt-0.5">
-                    <PiGameController className="text-stone-500 text-sm" />
+                    <PiSoccerBall className="text-stone-500 text-sm" />
                   </div>
                   <div className="flex-1">
                     <p className="font-mono text-sm tracking-widest text-stone-600 dark:text-stone-500 mb-2 uppercase">
-                      Game Design
+                      Football
                     </p>
                     <p className="text-sm lg:text-base font-sans text-stone-800 dark:text-stone-300 leading-relaxed">
-                      Although I don't particularly have the time to play these
-                      days, my fascination with{" "}
+                      I'm a huge football fan - especially the tactical side of
+                      things; how teams set up, how a press is structured, and
+                      how statistics are increasingly informing the game. I try
+                      to put that last part to use in{" "}
                       <span className="font-bold text-stone-900 dark:text-stone-200">
-                        video game design
-                      </span>{" "}
-                      hasn't faded; particularly retro games, where developers
-                      were forced into creativity through limitation.
-                    </p>
+                        FPL
+                      </span>
+                      , with limited success.
+                    </p>{" "}
                   </div>
                 </div>
               </AnimatedSection>
