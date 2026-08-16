@@ -22,16 +22,20 @@ const CareerSection = ({
       viewport={{ once: true, amount: 0.1 }}
       className={className}
     >
-      <h6
-        className={`font-mono text-lg text-stone-800 dark:text-stone-500 tracking-widest ${isRight ? "text-right" : ""}`}
+      <p
+        className={`font-mono text-sm tracking-widest text-stone-500 uppercase ${
+          isRight ? "text-right" : "text-left"
+        }`}
       >
         {eyebrow}
-      </h6>
-      <h1
-        className={`text-4xl font-sans font-bold mt-2 mb-5 text-stone-900 dark:text-stone-100 ${isRight ? "text-right" : ""}`}
+      </p>
+      <h2
+        className={`text-4xl lg:text-5xl font-sans mt-2 mb-5 font-bold tracking-tight text-stone-900 dark:text-stone-100 ${
+          isRight ? "text-right" : "text-left"
+        }`}
       >
         {heading}
-      </h1>
+      </h2>
     </motion.div>
   );
 };

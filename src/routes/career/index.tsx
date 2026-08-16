@@ -96,14 +96,15 @@ const Career = () => (
   <div className="max-w-[60rem] mx-auto py-16 p-5 sm:p-10">
     <TechStack />
 
-    <CareerSection eyebrow="CAREER" heading="Experience" className="mt-16" />
+    <CareerSection eyebrow="CAREER" heading="Timeline." className="mt-16" />
     <hr className="border-t-4 border-stone-300 dark:border-stone-700" />
     <CareerTimeline items={workData} />
 
     <CareerSection
       eyebrow="EDUCATION"
-      heading="Academic Background"
+      heading="Academic Background."
       className="mt-16"
+      align = "right"
     />
     <EducationGrid items={educationData} />
   </div>

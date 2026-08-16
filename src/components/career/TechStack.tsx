@@ -39,15 +39,14 @@ const TechStack = () => (
     transition={{ duration: 0.5, easeOut: true }}
     whileInView={{ opacity: 1, scale: 1 }}
     viewport={{ once: true, amount: 0.1 }}
-    className="mt-16"
   >
-    <h6 className="text-right font-mono text-lg tracking-widest text-stone-800 dark:text-stone-500">
-      LANGUAGES & TECHNOLOGIES
-    </h6>
-    <h1 className="text-right text-4xl font-sans font-bold mt-2 mb-8 text-stone-900 dark:text-stone-100">
-      I have experience with...
-    </h1>
-
+    <h2 className="text-right text-4xl lg:text-5xl font-sans font-bold tracking-tight text-stone-900 dark:text-stone-100">
+      Experience.
+    </h2>
+    <p className="text-right font-mono text-sm tracking-widest text-stone-500 mt-4 uppercase">
+      Languages & Technologies
+    </p>
+    
     <div className="grid grid-cols-6">
       {techData.map((cardData, index) => (
         <Tilt key={index} options={defaultTiltOptions}>

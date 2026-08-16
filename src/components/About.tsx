@@ -1,28 +1,31 @@
-import { useRef } from "react";
 import { motion } from "framer-motion";
 import { Link } from "@tanstack/react-router";
 import { RiComputerLine } from "react-icons/ri";
 import { PiFilmSlate, PiBarbell, PiSoccerBall, PiCar } from "react-icons/pi";
 
 const variants = {
-  hidden: { opacity: 0, scale: 0.75 },
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
-    scale: 1,
-    transition: { duration: 0.5, ease: "easeOut" },
+    y: 0,
+    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
   },
 };
 
-const AnimatedSection = ({ children }: { children: React.ReactNode }) => {
-  const ref = useRef(null);
-
+const AnimatedSection = ({
+  children,
+  className = "",
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
   return (
     <motion.div
-      ref={ref}
       variants={variants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.1 }}
+      viewport={{ once: true, margin: "-40px" }}
+      className={className}
     >
       {children}
     </motion.div>
@@ -31,48 +34,50 @@ const AnimatedSection = ({ children }: { children: React.ReactNode }) => {
 
 const About = () => {
   return (
-    <div
+    <section
       id="about"
-      className="max-w-[60rem] mx-auto py-16 p-5 sm:p-10 lg:-translate-y-12"
+      className="max-w-[60rem] mx-auto py-16 px-6 lg:px-10 min-h-screen"
     >
-      <div className="max-w-[60rem] mx-auto">
-        <AnimatedSection>
-          <h6 className="font-mono text-lg text-stone-800 dark:text-stone-500 tracking-widest">
-            ABOUT ME
-          </h6>
-          <div className="text-4xl font-sans font-bold mt-2 mb-10">
-            <h1 className="text-stone-900 dark:text-stone-100">Who am I?</h1>
-          </div>
+      <div className="max-w-[50rem] mx-auto">
+        
+        {/* Main Header */}
+        <AnimatedSection className="mb-16 text-center lg:text-left">
+          <h2 className="text-4xl lg:text-5xl font-sans font-bold tracking-tight text-stone-900 dark:text-stone-100">
+            About.
+          </h2>
         </AnimatedSection>
 
-        <div className="flex flex-col divide-y divide-stone-200 dark:divide-stone-800">
-          {/* Role */}
+        {/* 1. PROFESSIONAL SECTION */}
+        <div className="mb-16">
           <AnimatedSection>
-            <div className="flex gap-5 py-7">
-              <div className="flex-shrink-0 w-9 h-9 rounded-full bg-stone-100 dark:bg-stone-800 flex items-center justify-center mt-0.5">
-                <RiComputerLine className="text-stone-500 text-sm" />
+            <h3 className="font-mono text-sm tracking-widest text-stone-500 mb-6 uppercase border-b border-stone-200 dark:border-stone-800/50 pb-4">
+              Professional Background
+            </h3>
+          </AnimatedSection>
+
+          <AnimatedSection>
+            <div className="flex flex-col sm:flex-row gap-6 py-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-stone-100 dark:bg-stone-800/80 flex items-center justify-center">
+                <RiComputerLine className="text-stone-500 text-lg" />
               </div>
               <div className="flex-1">
-                <p className="font-mono text-sm tracking-widest text-stone-600 dark:text-stone-500 mb-2 uppercase">
-                  Role
-                </p>
-                <p className="text-sm lg:text-base font-sans text-stone-800 dark:text-stone-300 leading-relaxed">
+                <h4 className="font-mono text-sm tracking-widest text-stone-900 dark:text-stone-300 mb-3 uppercase">
+                  Engineering
+                </h4>
+                <p className="text-base font-sans text-stone-600 dark:text-stone-400 leading-relaxed">
                   I am a{" "}
-                  <span className="font-bold text-stone-900 dark:text-stone-200">
+                  <span className="font-medium text-stone-900 dark:text-stone-200">
                     Java software engineer
                   </span>
                   , building production software since 2024. Day-to-day I work
                   in an{" "}
-                  <span className="font-bold text-stone-900 dark:text-stone-200">
+                  <span className="font-medium text-stone-900 dark:text-stone-200">
                     Agile
                   </span>{" "}
-                  environment, contributing to EPICs within{" "}
-                  <span className="font-bold text-stone-900 dark:text-stone-200">
-                    Scrum
-                  </span>{" "}
-                  teams operating across SAFe ARTs. I believe that an{" "}
-                  <span className="font-bold text-stone-900 dark:text-stone-200">
-                    architecture-focussed
+                  environment, contributing to EPICs within Scrum teams
+                  operating across SAFe ARTs. I believe that an{" "}
+                  <span className="font-medium text-stone-900 dark:text-stone-200">
+                    architecture-focused
                   </span>{" "}
                   approach is pivotal in a contemporary engineering landscape;
                   extensible, microservice-based design is paramount for
@@ -81,134 +86,135 @@ const About = () => {
               </div>
             </div>
           </AnimatedSection>
+        </div>
 
-          {/* Interests */}
-          <div className="py-7">
+        {/* 2. INTERESTS SECTION */}
+        <div>
+          <AnimatedSection>
+            <h3 className="font-mono text-sm tracking-widest text-stone-500 mb-2 uppercase border-b border-stone-200 dark:border-stone-800/50 pb-4">
+              Personal Interests
+            </h3>
+          </AnimatedSection>
+
+          <div className="flex flex-col border-stone-200 dark:border-stone-800/50">
+            {/* Film */}
             <AnimatedSection>
-              <h6 className="font-mono text-lg text-stone-800 dark:text-stone-500 tracking-widest">
-                INTERESTS
-              </h6>
+              <div className="flex flex-col sm:flex-row gap-6 py-8 border-b border-stone-200 dark:border-stone-800/50">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-stone-100 dark:bg-stone-800/80 flex items-center justify-center">
+                  <PiFilmSlate className="text-stone-500 text-lg" />
+                </div>
+                <div className="flex-1">
+                  <h4 className="font-mono text-sm tracking-widest text-stone-900 dark:text-stone-300 mb-3 uppercase">
+                    Cinema
+                  </h4>
+                  <p className="text-base font-sans text-stone-600 dark:text-stone-400 leading-relaxed">
+                    I'm an avid lover of cinema, across all genres, with a soft
+                    spot for{" "}
+                    <span className="font-medium text-stone-900 dark:text-stone-200">
+                      supernatural horror
+                    </span>
+                    . I write about the films that interest me most; right now I'm
+                    watching and writing about a new film every day for{" "}
+                    <span className="font-medium text-stone-900 dark:text-stone-200">
+                      500 days
+                    </span>
+                    . You can find all of that{" "}
+                    <Link
+                      to="/films"
+                      className="font-medium text-stone-900 dark:text-stone-200 underline decoration-stone-300 dark:decoration-stone-600 underline-offset-4 hover:decoration-stone-900 dark:hover:decoration-stone-200 transition-colors"
+                    >
+                      here
+                    </Link>
+                    .
+                  </p>
+                </div>
+              </div>
             </AnimatedSection>
 
-            <div className="flex flex-col divide-y divide-stone-300 dark:divide-stone-900">
-              {/* Film */}
-              <AnimatedSection>
-                <div className="flex gap-5 py-6">
-                  <div className="flex-shrink-0 w-9 h-9 rounded-full bg-stone-100 dark:bg-stone-800 flex items-center justify-center mt-0.5">
-                    <PiFilmSlate className="text-stone-500 text-sm" />
-                  </div>
-                  <div className="flex-1">
-                    <p className="font-mono text-sm tracking-widest text-stone-600 dark:text-stone-500 mb-2 uppercase">
-                      Cinema
-                    </p>
-                    <p className="text-sm lg:text-base font-sans text-stone-800 dark:text-stone-300 leading-relaxed">
-                      I'm an avid lover of cinema, across all genres, with a
-                      soft spot for{" "}
-                      <span className="font-bold text-stone-900 dark:text-stone-200">
-                        supernatural horror
-                      </span>
-                      . I write about the films that interest me most;
-                      right now I'm watching and writing about a new film every
-                      day for{" "}
-                      <span className="font-bold text-stone-900 dark:text-stone-200">
-                        500 days
-                      </span>
-                      . You can find all of that{" "}
-                      <Link
-                        to="/films"
-                        className="font-mono font-bold text-stone-900 dark:text-stone-200 underline underline-offset-4 hover:text-stone-500 dark:hover:text-stone-400 transition-colors"
-                      >
-                        here
-                      </Link>
-                      .
-                    </p>
-                  </div>
-                </div>
-              </AnimatedSection>
-
-              {/* Lifting */}
-              <AnimatedSection>
-                <div className="flex gap-5 py-6">
-                  <div className="flex-shrink-0 w-9 h-9 rounded-full bg-stone-100 dark:bg-stone-800 flex items-center justify-center mt-0.5">
-                    <PiBarbell className="text-stone-500 text-sm" />
-                  </div>
-                  <div className="flex-1">
-                    <p className="font-mono text-sm tracking-widest text-stone-600 dark:text-stone-500 mb-2 uppercase">
-                      Strength Training
-                    </p>
-                    <p className="text-sm lg:text-base font-sans text-stone-800 dark:text-stone-300 leading-relaxed">
-                      As someone who trains regularly, I'm drawn to the tension between{" "}
-                      <span className="font-bold text-stone-900 dark:text-stone-200">
-                        evidence-based methodology
-                      </span>{" "}
-                      and just training hard. Although online discourse is
-                      divisive, I believe that the truth - as usual - sits
-                      somewhere in the middle.
-                    </p>
-                  </div>
-                </div>
-              </AnimatedSection>
-
-              {/* Football */}
-              <AnimatedSection>
-                <div className="flex gap-5 py-6">
-                  <div className="flex-shrink-0 w-9 h-9 rounded-full bg-stone-100 dark:bg-stone-800 flex items-center justify-center mt-0.5">
-                    <PiSoccerBall className="text-stone-500 text-sm" />
-                  </div>
-                  <div className="flex-1">
-                    <p className="font-mono text-sm tracking-widest text-stone-600 dark:text-stone-500 mb-2 uppercase">
-                      Football
-                    </p>
-                    <p className="text-sm lg:text-base font-sans text-stone-800 dark:text-stone-300 leading-relaxed">
-                      I'm a huge football fan - especially the tactical side of
-                      things; how teams set up, how a press is structured, and
-                      how statistics are increasingly informing the game. I try
-                      to put that last part to use in{" "}
-                      <span className="font-bold text-stone-900 dark:text-stone-200">
-                        FPL
-                      </span>
-                      , though my table position would suggest I've still got
-                      some way to go.
-                    </p>{" "}
-                  </div>
-                </div>
-              </AnimatedSection>
-
-              {/* Cars */}
-              <AnimatedSection>
-                <div className="flex gap-5 py-6">
-                  <div className="flex-shrink-0 w-9 h-9 rounded-full bg-stone-100 dark:bg-stone-800 flex items-center justify-center mt-0.5">
-                    <PiCar className="text-stone-500 text-sm" />
-                  </div>
-                  <div className="flex-1">
-                    <p className="font-mono text-sm tracking-widest text-stone-600 dark:text-stone-500 mb-2 uppercase">
-                      Automotive
-                    </p>
-                    <p className="text-sm lg:text-base font-sans text-stone-800 dark:text-stone-300 leading-relaxed">
-                      I have a deep admiration for the automotive world,
-                      particularly{" "}
-                      <span className="font-bold text-stone-900 dark:text-stone-200">
-                        JDM
-                      </span>{" "}
-                      cars and the engineering philosophy behind
-                      late-eighties/early-nineties Japanese performance
-                      vehicles.
-                    </p>
-                  </div>
-                </div>
-              </AnimatedSection>
-            </div>
-
+            {/* Lifting */}
             <AnimatedSection>
-              <p className="mt-6 text-sm font-sans text-stone-500 dark:text-stone-500 italic">
-                If any of this resonates, feel free to reach out - I'm always
-                happy to talk!
-              </p>
+              <div className="flex flex-col sm:flex-row gap-6 py-8 border-b border-stone-200 dark:border-stone-800/50">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-stone-100 dark:bg-stone-800/80 flex items-center justify-center">
+                  <PiBarbell className="text-stone-500 text-lg" />
+                </div>
+                <div className="flex-1">
+                  <h4 className="font-mono text-sm tracking-widest text-stone-900 dark:text-stone-300 mb-3 uppercase">
+                    Strength Training
+                  </h4>
+                  <p className="text-base font-sans text-stone-600 dark:text-stone-400 leading-relaxed">
+                    As someone who trains regularly, I'm drawn to the tension
+                    between{" "}
+                    <span className="font-medium text-stone-900 dark:text-stone-200">
+                      evidence-based methodology
+                    </span>{" "}
+                    and simply training hard. Although online discourse is
+                    divisive, I believe that the truth-as usual-sits somewhere
+                    in the middle.
+                  </p>
+                </div>
+              </div>
+            </AnimatedSection>
+
+            {/* Football */}
+            <AnimatedSection>
+              <div className="flex flex-col sm:flex-row gap-6 py-8 border-b border-stone-200 dark:border-stone-800/50">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-stone-100 dark:bg-stone-800/80 flex items-center justify-center">
+                  <PiSoccerBall className="text-stone-500 text-lg" />
+                </div>
+                <div className="flex-1">
+                  <h4 className="font-mono text-sm tracking-widest text-stone-900 dark:text-stone-300 mb-3 uppercase">
+                    Football
+                  </h4>
+                  <p className="text-base font-sans text-stone-600 dark:text-stone-400 leading-relaxed">
+                    I'm a huge football fan-especially the tactical side of
+                    things; how teams set up, how a press is structured, and how
+                    statistics are increasingly informing the game. I try to put
+                    that last part to use in{" "}
+                    <span className="font-medium text-stone-900 dark:text-stone-200">
+                      FPL
+                    </span>
+                    , though my table position would suggest I've still got some
+                    way to go.
+                  </p>
+                </div>
+              </div>
+            </AnimatedSection>
+
+            {/* Cars */}
+            <AnimatedSection>
+              <div className="flex flex-col sm:flex-row gap-6 py-8">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-stone-100 dark:bg-stone-800/80 flex items-center justify-center">
+                  <PiCar className="text-stone-500 text-lg" />
+                </div>
+                <div className="flex-1">
+                  <h4 className="font-mono text-sm tracking-widest text-stone-900 dark:text-stone-300 mb-3 uppercase">
+                    Automotive
+                  </h4>
+                  <p className="text-base font-sans text-stone-600 dark:text-stone-400 leading-relaxed">
+                    I have a deep admiration for the automotive world,
+                    particularly{" "}
+                    <span className="font-medium text-stone-900 dark:text-stone-200">
+                      JDM
+                    </span>{" "}
+                    cars and the engineering philosophy behind
+                    late-eighties/early-nineties Japanese performance vehicles.
+                  </p>
+                </div>
+              </div>
             </AnimatedSection>
           </div>
         </div>
+
+        {/* Footer Note */}
+        <AnimatedSection className="mt-5 text-center lg:text-left">
+          <p className="text-base font-sans text-stone-500 dark:text-stone-500 italic">
+            If any of this resonates, feel free to reach out; I'm always happy to
+            talk!
+          </p>
+        </AnimatedSection>
+        
       </div>
-    </div>
+    </section>
   );
 };
 
